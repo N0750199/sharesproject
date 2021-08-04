@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="http://xml.netbeans.org/schema/Shares"
+    xmlns:tns="http://xml.netbeans.org/schema/Shares"
+    elementFormDefault="qualified">
+
+    <xsd:complexType name="Share">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:string"/>
+            <xsd:element name="symbol" type="xsd:string"></xsd:element>
+            <xsd:element name="shareNo" type="xsd:int"/>
+            <xsd:element name="Price"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name = "Price">
+        <xsd:sequence>
+          <xsd:element name="shareprice" type="xsd:float"/>
+          <xsd:element name="currency" type="xsd:string"/>
+          <xsd:element name="date" type="xsd:string"/>
+        </xsd:sequence>
+  </xsd:complexType>
+  
+
+    <xsd:element name="ShareList">
+        <xsd:complexType>
+            <xsd:sequence >
+                <xsd:element name="share_collection" type="tns:shareType" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
+ 
